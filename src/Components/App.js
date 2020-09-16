@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../Styling/App.css';
 import BuildPc from "./BuildPc";
 import Cart from "./Cart";
+import Header from "../Components/Header"
 
 // This object will allow us to
 // easily convert numbers into US dollar values
@@ -33,6 +34,7 @@ class App extends Component {
   };
 
   updateFeature = (feature, newValue) => {
+    console.log("feature HI")
     const selected = Object.assign({}, this.state.selected);
     selected[feature] = newValue;
     this.setState({
@@ -51,7 +53,7 @@ class App extends Component {
       <div className="App">
        
         <main>
-          
+          <Header/>
           <BuildPc features={this.props.features} selected={this.state.selected} change={this.updateFeature}/>
           <Cart selected={this.state.selected}/>
         </main>
