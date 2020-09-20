@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Part from "./Part";
-
+import FEATURES from "../Store"
 
 
 // This object will allow us to
@@ -12,8 +12,8 @@ const USCurrencyFormat = new Intl.NumberFormat('en-US', {
 
 function BuildPc(props) {
   
-  const features = Object.keys(props.features).map((feature, idx) => {
-    return <Part key={`part${idx}`} featureChoice={props.features[feature]} name={feature} selected={props.selected} change={props.change} idx={idx}/>
+  const features = Object.keys(FEATURES).map((feature, idx) => {
+    return <Part key={`part${idx}`} featureChoice={FEATURES[feature]} name={feature} selected={props.selected} change={props.change} idx={idx}/>
     
   });
   return (

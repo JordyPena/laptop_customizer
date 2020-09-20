@@ -4,6 +4,7 @@ import BuildPc from "./BuildPc";
 import Cart from "./Cart";
 import Header from "../Components/Header"
 
+
 // This object will allow us to
 // easily convert numbers into US dollar values
 const USCurrencyFormat = new Intl.NumberFormat('en-US', {
@@ -12,6 +13,7 @@ const USCurrencyFormat = new Intl.NumberFormat('en-US', {
 });
 
 class App extends Component {
+
   state = {
     selected: {
       Processor: {
@@ -44,17 +46,12 @@ class App extends Component {
 
   render() {
     
-
-   
-
-    
-
     return (
       <div className="App">
        
         <main>
           <Header/>
-          <BuildPc features={this.props.features} selected={this.state.selected} change={this.updateFeature}/>
+          <BuildPc selected={this.state.selected} change={this.updateFeature}/>
           <Cart selected={this.state.selected}/>
         </main>
       </div>
